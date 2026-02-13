@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiroki Inoue | Portfolio</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --border: #222;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #3b82f6;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 480px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-hint span {
+      display: block;
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--text-muted), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* Section */
+    section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    /* About */
+    .about-text {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .about-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Hobbies */
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .hobby-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .hobby-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hobby-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .hobby-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hobby-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-label">Portfolio</div>
+    <h1>Hiroki Inoue</h1>
+    <p>プログラミング・読書・音楽・旅行が好きなエンジニア。</p>
+    <div class="scroll-hint">
+      SCROLL
+      <span></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">About</div>
+    <p class="about-text">
+      はじめまして、<strong>Hiroki Inoue</strong> です。<br>
+      テクノロジーとクリエイティブの交差点に興味を持ち、日々学びを深めています。
+      コードを書くことはもちろん、本を読んだり、音楽を聴いたり、知らない場所を旅することで
+      新しいインスピレーションを得ています。
+    </p>
+  </section>
+
+  <section>
+    <div class="section-title">Hobbies</div>
+    <div class="hobby-grid">
+      <div class="hobby-card">
+        <div class="hobby-icon">&lt;/&gt;</div>
+        <h3>プログラミング</h3>
+        <p>Webアプリケーションやツールの開発を通じて、アイデアを形にすることを楽しんでいます。</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon">&#x1D56E;</div>
+        <h3>読書</h3>
+        <p>技術書からノンフィクションまで、幅広いジャンルの本を読み、知識と視野を広げています。</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon">&#x266B;</div>
+        <h3>音楽</h3>
+        <p>ジャンルを問わず音楽を聴くことが好きで、日常の中にリズムと彩りを取り入れています。</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon">&#x2708;</div>
+        <h3>旅行</h3>
+        <p>まだ見ぬ景色や文化に触れることで、新しい視点とインスピレーションを得ています。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Hiroki Inoue
+  </footer>
+
+</body>
+</html>
